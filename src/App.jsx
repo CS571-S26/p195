@@ -10,7 +10,7 @@ import BusBuddy404 from "./components/nav/pages/BusBuddy404";
 function App() {
 	return (
 		<Routes>
-			<Route path="/p195" element={<BusBuddy />}>
+			<Route path="/" element={<BusBuddy />}>
 				<Route index element={<StartPage />} />
 				<Route path="university-buses" element={<BusPage />} />
 				<Route path="favorites" element={<Favorites />} />
