@@ -4,10 +4,10 @@ import BusBuddyDataContext from "../contexts/BusBuddyDataContext"
 
 export default function BusInfo(props) {
 
-    const { favoritedBusIds, favoriteBus, unfavoriteBus } = useContext(BusBuddyDataContext)
+    const { favoritedStopIds, favoriteStop, unfavoriteStop } = useContext(BusBuddyDataContext)
     const [showInfo, setShowInfo] = useState(false)
 
-    const isFavorited = favoritedBusIds.includes(props.id)
+    const isFavorited = favoritedStopIds.includes(props.id)
 
     return (
         <div>
@@ -33,11 +33,11 @@ export default function BusInfo(props) {
             </Button>
 
             {isFavorited ? (
-                <Button onClick={() => unfavoriteBus(props.id, props.name)} variant="danger">
+                <Button onClick={() => unfavoriteStop(props.id, props.name)} variant="danger">
                     Unfavorite
                 </Button>
             ) : (
-                <Button onClick={() => favoriteBus(props.id, props.name)} variant="success">
+                <Button onClick={() => favoriteStop(props.id, props.name)} variant="success">
                     Favorite
                 </Button>
             )}
