@@ -1,35 +1,42 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Button } from "react-bootstrap"
 import BusBuddyDataContext from "../contexts/BusBuddyDataContext"
+import StopModal from "./StopModal"
 
-export default function BusInfo(props) {
+export default function StopInfo(props) {
 
     const { favoritedStopIds, favoriteStop, unfavoriteStop } = useContext(BusBuddyDataContext)
     const [showInfo, setShowInfo] = useState(false)
+    const [note, setNote] = useState("")
 
     const isFavorited = favoritedStopIds.includes(props.id)
+
+    useEffect(() => {
+        const savedNotes = JSON.parse(localStorage.getItem("stopNotes")) || {}
+        if (savedNotes[props.id]) {
+            setNote(savedNotes[props.id])
+        }
+    }, [props.id])
+
+    useEffect(() => {
+        const savedNotes = JSON.parse(localStorage.getItem("stopNotes")) || {}
+        savedNotes[props.id] = note
+        localStorage.setItem("stopNotes", JSON.stringify(savedNotes))
+    }, [note, props.id])
 
     return (
         <div>
             <img
-                src={"https://raw.githubusercontent.com/CS571-S26/hw3-api-static-content/refs/heads/main/tuna.png"}
+                src={"https://media.istockphoto.com/id/1597147936/photo/billboard-with-white-empty-canvas-on-bus-shelters.jpg?s=612x612&w=0&k=20&c=hif0IDoKlz5F52ZxyzAeoxgmQqGy_LbWsVTA2In1JEk="}
                 alt={`a picture of ${props.name}`}
                 height="400px"
-                width="400px"
+                width="275px"
             />
 
             <h3>{props.name}</h3>
 
-            {showInfo && (
-                <ul>
-                    {props.stops.map((stop, index) => (
-                        <li key={index}>{stop}</li>
-                    ))}
-                </ul>
-            )}
-
-            <Button onClick={() => setShowInfo(!showInfo)}>
-                {showInfo ? "Hide Info" : "Show Info"}
+            <Button onClick={() => setShowInfo(true)}>
+                Show Info
             </Button>
 
             {isFavorited ? (
@@ -41,6 +48,15 @@ export default function BusInfo(props) {
                     Favorite
                 </Button>
             )}
+
+            <StopModal
+                show={showInfo}
+                handleClose={() => setShowInfo(false)}
+                name={props.name}
+                buses={props.buses}
+                note={note}
+                setNote={setNote}
+            />
         </div>
     )
 }

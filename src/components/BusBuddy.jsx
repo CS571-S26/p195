@@ -14,7 +14,7 @@ export default function BusBuddy() {
     ];
 
     const placeholderStops = [
-        { id: 1, name: "Stop ABCDE", buses: ["Bus A", "Bus AB", "Bus C", "Bus D", "Bus E",] },
+        { id: 1, name: "Stop ABCDE", buses: ["Bus A", "Bus B", "Bus C", "Bus D", "Bus E",] },
         { id: 2, name: "Stop ACE", buses: ["Bus A", "Bus C", "Bus E"] },
         { id: 3, name: "Stop AB", buses: ["Bus A", "Bus B"] },
         { id: 4, name: "Stop BCD", buses: ["Bus B", "Bus C", "Bus D"] },

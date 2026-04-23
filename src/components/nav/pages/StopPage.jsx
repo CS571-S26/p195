@@ -9,10 +9,10 @@ export default function StopPage() {
 
     return (
         <div>
-            <h1>Available University Buses</h1>
+            <h1>Stops Visited By University Buses</h1>
 
             {stops.length === 0 ? (
-                <p>No buses match your search terms.</p>
+                <p>No stops match your search terms.</p>
             ) : (
                 <Container fluid>
                     <Row>
