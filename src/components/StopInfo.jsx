@@ -33,7 +33,7 @@ export default function StopInfo(props) {
                 width="100%"
             />
 
-            <h3>{props.name}</h3>
+            <h1>{props.name}</h1>
 
             <Button onClick={() => setShowInfo(true)}>
                 Show Info
