@@ -17,14 +17,17 @@ export default function StopPage() {
             <h1>Stops Visited By University Buses</h1>
 
             <Form className="mb-4">
-                <InputGroup>
-                    <Form.Control
-                        type="search"
-                        placeholder="Search stops"
-                        value={searchTerm}
-                        onChange={e => setSearchTerm(e.target.value)}
-                    />
-                </InputGroup>
+                <Form.Group controlId="stop-search">
+                    <Form.Label>Search Stops</Form.Label>
+                    <InputGroup>
+                        <Form.Control
+                            type="search"
+                            placeholder="Search stops"
+                            value={searchTerm}
+                            onChange={e => setSearchTerm(e.target.value)}
+                        />
+                    </InputGroup>
+                </Form.Group>
             </Form>
 
             {filteredStops.length === 0 ? (

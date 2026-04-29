@@ -33,7 +33,7 @@ export default function BusModal(props) {
                     </a>
                 </p>
 
-                <Form.Group className="mt-3">
+                <Form.Group controlId="notesTextarea" className="mt-3">
                     <Form.Label>Notes</Form.Label>
                     <Form.Control
                         as="textarea"

@@ -17,14 +17,17 @@ export default function BusPage() {
             <h1>Available University Buses</h1>
 
             <Form className="mb-4">
-                <InputGroup>
-                    <Form.Control
-                        type="search"
-                        placeholder="Search buses"
-                        value={searchTerm}
-                        onChange={e => setSearchTerm(e.target.value)}
-                    />
-                </InputGroup>
+                <Form.Group controlId="bus-search">
+                    <Form.Label>Search Buses</Form.Label>
+                    <InputGroup>
+                        <Form.Control
+                            type="search"
+                            placeholder="Search buses"
+                            value={searchTerm}
+                            onChange={e => setSearchTerm(e.target.value)}
+                        />
+                    </InputGroup>
+                </Form.Group>
             </Form>
 
             {filteredBuses.length === 0 ? (

@@ -19,14 +19,17 @@ export default function FavoriteBus() {
             <h1>Your Favorite Buses</h1>
 
             <Form className="mb-4">
-                <InputGroup>
-                    <Form.Control
-                        type="search"
-                        placeholder="Search favorite buses"
-                        value={searchTerm}
-                        onChange={e => setSearchTerm(e.target.value)}
-                    />
-                </InputGroup>
+                <Form.Group controlId="bus-favorite-search">
+                    <Form.Label>Search Favorite Buses</Form.Label>
+                    <InputGroup>
+                        <Form.Control
+                            type="search"
+                            placeholder="Search favorite buses"
+                            value={searchTerm}
+                            onChange={e => setSearchTerm(e.target.value)}
+                        />
+                    </InputGroup>
+                </Form.Group>
             </Form>
 
             {favoritedBuses.length === 0 ? (

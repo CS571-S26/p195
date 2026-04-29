@@ -19,14 +19,17 @@ export default function FavoriteStop() {
             <h1>Your Favorite Stops</h1>
 
             <Form className="mb-4">
-                <InputGroup>
-                    <Form.Control
-                        type="search"
-                        placeholder="Search favorite stops"
-                        value={searchTerm}
-                        onChange={e => setSearchTerm(e.target.value)}
-                    />
-                </InputGroup>
+                <Form.Group controlId="stop-favorite-search">
+                    <Form.Label>Search Favorite Stops</Form.Label>
+                    <InputGroup>
+                        <Form.Control
+                            type="search"
+                            placeholder="Search favorite stops"
+                            value={searchTerm}
+                            onChange={e => setSearchTerm(e.target.value)}
+                        />
+                    </InputGroup>
+                </Form.Group>
             </Form>
 
             {favoritedStops.length === 0 ? (
