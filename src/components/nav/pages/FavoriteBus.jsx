@@ -1,19 +1,33 @@
-import { useContext } from "react"
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { useContext, useState } from "react"
+import { Container, Row, Col, Card, Form, InputGroup } from "react-bootstrap"
 import BusBuddyDataContext from "../../../contexts/BusBuddyDataContext"
 import BusInfo from "../../BusInfo"
 
 export default function FavoriteBus() {
 
     const { buses, favoritedBusIds } = useContext(BusBuddyDataContext)
+    const [searchTerm, setSearchTerm] = useState("")
 
-    const favoritedBuses = buses.filter(bus =>
-        favoritedBusIds.includes(bus.id)
-    )
+    const favoritedBuses = buses
+        .filter(bus => favoritedBusIds.includes(bus.id))
+        .filter(bus =>
+            JSON.stringify(bus).toLowerCase().includes(searchTerm.trim().toLowerCase())
+        )
 
     return (
         <div>
             <h1>Your Favorite Buses</h1>
+
+            <Form className="mb-4">
+                <InputGroup>
+                    <Form.Control
+                        type="search"
+                        placeholder="Search favorite buses"
+                        value={searchTerm}
+                        onChange={e => setSearchTerm(e.target.value)}
+                    />
+                </InputGroup>
+            </Form>
 
             {favoritedBuses.length === 0 ? (
                 <p>You have not favorited any buses yet.</p>

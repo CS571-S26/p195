@@ -43,21 +43,21 @@ export default function BusBuddy() {
     ];
 
     const placeholderStops = [
-        { id: 1, name: "Langdon & Memorial", buses: ["Route 80", "Route 81", "Route 82"] },
-        { id: 2, name: "Observatory & Elm", buses: ["Route 80"] },
-        { id: 3, name: "University Bay & Lot 60", buses: ["Route 80"] },
-        { id: 4, name: "Eagle Heights & Brown Shelter", buses: ["Route 80", "Route 84"] },
-        { id: 5, name: "Marsh & Lot 76", buses: ["Route 80"] },
-        { id: 6, name: "Randall & Engineering", buses: ["Route 80"] },
-        { id: 7, name: "Blair & Johnson", buses: ["Route 81"] },
-        { id: 8, name: "W Washington & Bedford", buses: ["Route 81"] },
-        { id: 9, name: "Walnut & Observatory", buses: ["Route 82"] },
-        { id: 10, name: "Regent & Breese", buses: ["Route 82"] },
-        { id: 11, name: "Lake Mendota & Eagle Heights", buses: ["Route 84"] },
-        { id: 12, name: "Highland & UW Hospital", buses: ["Route 84"] },
-        { id: 13, name: "Observatory & Easterday", buses: ["Route 84"] },
-        { id: 14, name: "Linden & Charter", buses: ["Route 84"] },
-        { id: 15, name: "Linden & Babcock", buses: ["Route 84"] }
+        { id: 1, name: "Blair & Johnson", buses: ["Route 81"] },
+        { id: 2, name: "Eagle Heights & Brown Shelter", buses: ["Route 80", "Route 84"] },
+        { id: 3, name: "Highland & UW Hospital", buses: ["Route 84"] },
+        { id: 4, name: "Lake Mendota & Eagle Heights", buses: ["Route 84"] },
+        { id: 5, name: "Langdon & Memorial", buses: ["Route 80", "Route 81", "Route 82"] },
+        { id: 6, name: "Linden & Babcock", buses: ["Route 84"] },
+        { id: 7, name: "Linden & Charter", buses: ["Route 84"] },
+        { id: 8, name: "Marsh & Lot 76", buses: ["Route 80"] },
+        { id: 9, name: "Observatory & Easterday", buses: ["Route 84"] },
+        { id: 10, name: "Observatory & Elm", buses: ["Route 80"] },
+        { id: 11, name: "Randall & Engineering", buses: ["Route 80"] },
+        { id: 12, name: "Regent & Breese", buses: ["Route 82"] },
+        { id: 13, name: "University Bay & Lot 60", buses: ["Route 80"] },
+        { id: 14, name: "W Washington & Bedford", buses: ["Route 81"] },
+        { id: 15, name: "Walnut & Observatory", buses: ["Route 82"] }
     ];
 
     const [buses, setBuses] = useState(placeholderBuses);
