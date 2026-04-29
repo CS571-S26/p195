@@ -14,21 +14,24 @@ export default function BusBuddy() {
                 "Eagle Heights & Brown Shelter",
                 "Marsh & Lot 76",
                 "Randall & Engineering"
-            ] 
+            ],
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/80.png"
         },
         { id: 2, name: "Route 81", stops: 
             [   
                 "Langdon & Memorial Union", 
                 "Blair & Johnson",
                 "BW Washington & Bedford"
-            ] 
+            ],
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/routes/81-0823.png" 
         },
         { id: 3, name: "Route 82", stops: 
             [   
                 "Langdon & Memorial Union", 
                 "Walnut & Observatory",
                 "Regent & Breese"
-            ] 
+            ],
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/routes/rte_82_color_2021.png" 
         },
         { id: 4, name: "Route 84", stops: 
             [   
@@ -38,7 +41,8 @@ export default function BusBuddy() {
                 "Observatory & Easterday",
                 "Linden & Charter",
                 "Linden & Babcock",
-            ] 
+            ],
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/84.png" 
         }
     ];
 

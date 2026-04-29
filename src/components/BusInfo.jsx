@@ -55,6 +55,7 @@ export default function BusInfo(props) {
                 name={props.name}
                 stops={props.stops}
                 note={note}
+                image = {props.image}
                 setNote={setNote}
             />
         </div>

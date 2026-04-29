@@ -1,4 +1,4 @@
-import { Modal, Button, Form } from "react-bootstrap"
+import { Modal, Button, Form, Image } from "react-bootstrap"
 
 export default function BusModal(props) {
     return (
@@ -8,6 +8,15 @@ export default function BusModal(props) {
             </Modal.Header>
 
             <Modal.Body>
+
+                <Image
+                    src={props.image}
+                    alt={`${props.name} route map`}
+                    fluid
+                    rounded
+                    className="mb-3"
+                />
+
                 <ul>
                     {props.stops.map((stop, index) => (
                         <li key={index}>{stop}</li>
