@@ -15,7 +15,8 @@ export default function BusBuddy() {
                 "Marsh & Lot 76",
                 "Randall & Engineering"
             ],
-            image: "https://www.cityofmadison.com/sites/default/files/metro/images/80.png"
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/80.png",
+            link: "https://www.cityofmadison.com/metro/routes-schedules/route-80"
         },
         { id: 2, name: "Route 81", stops: 
             [   
@@ -23,7 +24,8 @@ export default function BusBuddy() {
                 "Blair & Johnson",
                 "BW Washington & Bedford"
             ],
-            image: "https://www.cityofmadison.com/sites/default/files/metro/images/routes/81-0823.png" 
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/routes/81-0823.png",
+            link: "https://www.cityofmadison.com/metro/routes-schedules/route-81" 
         },
         { id: 3, name: "Route 82", stops: 
             [   
@@ -31,7 +33,8 @@ export default function BusBuddy() {
                 "Walnut & Observatory",
                 "Regent & Breese"
             ],
-            image: "https://www.cityofmadison.com/sites/default/files/metro/images/routes/rte_82_color_2021.png" 
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/routes/rte_82_color_2021.png",
+            link: "https://www.cityofmadison.com/metro/routes-schedules/route-82" 
         },
         { id: 4, name: "Route 84", stops: 
             [   
@@ -42,7 +45,8 @@ export default function BusBuddy() {
                 "Linden & Charter",
                 "Linden & Babcock",
             ],
-            image: "https://www.cityofmadison.com/sites/default/files/metro/images/84.png" 
+            image: "https://www.cityofmadison.com/sites/default/files/metro/images/84.png",
+            link: "https://www.cityofmadison.com/metro/routes-schedules/route-84" 
         }
     ];
 

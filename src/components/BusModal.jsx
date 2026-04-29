@@ -23,6 +23,16 @@ export default function BusModal(props) {
                     ))}
                 </ul>
 
+                <p className="mt-3">
+                    <a
+                        href={props.link}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        View official Metro Transit route details
+                    </a>
+                </p>
+
                 <Form.Group className="mt-3">
                     <Form.Label>Notes</Form.Label>
                     <Form.Control
