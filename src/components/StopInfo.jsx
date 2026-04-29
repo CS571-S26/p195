@@ -27,10 +27,10 @@ export default function StopInfo(props) {
     return (
         <div>
             <img
-                src={"https://media.istockphoto.com/id/1597147936/photo/billboard-with-white-empty-canvas-on-bus-shelters.jpg?s=612x612&w=0&k=20&c=hif0IDoKlz5F52ZxyzAeoxgmQqGy_LbWsVTA2In1JEk="}
+                src={"https://badgerherald.com/wp-content/uploads/2025/03/brt_001.jpg"}
                 alt={`a picture of ${props.name}`}
-                height="400px"
-                width="275px"
+                height="auto"
+                width="100%"
             />
 
             <h3>{props.name}</h3>

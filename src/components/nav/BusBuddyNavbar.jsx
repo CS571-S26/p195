@@ -13,8 +13,8 @@ export default function BusBuddyNavbar(props) {
                 <Nav>
                     <Nav.Link as={Link} to="/">Start</Nav.Link>
                     <Nav.Link as={Link} to="/university-buses">University Buses</Nav.Link>
-                    <Nav.Link as={Link} to="/bus-stops">Bus Stops</Nav.Link>
                     <Nav.Link as={Link} to="/favorite-buses">Favorite Buses</Nav.Link>
+                    <Nav.Link as={Link} to="/bus-stops">Bus Stops</Nav.Link>
                     <Nav.Link as={Link} to="/favorite-stops">Favorite Stops</Nav.Link>
                 </Nav>
             </Navbar.Collapse>

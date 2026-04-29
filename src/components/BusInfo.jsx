@@ -27,10 +27,10 @@ export default function BusInfo(props) {
     return (
         <div>
             <img
-                src={"https://static.vecteezy.com/system/resources/thumbnails/060/371/279/small_2x/modern-white-coach-bus-parked-in-urban-environment-with-clear-skies-photo.jpeg"}
+                src={"https://upload.wikimedia.org/wikipedia/commons/4/4c/Madison_August_2022_032_%28Madison_Metro_bus%29.jpg"}
                 alt={`a picture of ${props.name}`}
-                height="400px"
-                width="275px"
+                height="auto"
+                width="100%"
             />
 
             <h3>{props.name}</h3>

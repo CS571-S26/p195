@@ -6,20 +6,58 @@ import { BusBuddyProvider } from "../contexts/BusBuddyDataContext";
 export default function BusBuddy() {
     
     const placeholderBuses = [
-        { id: 1, name: "Bus A", stops: ["Stop ABCDE", "Stop ACE", "Stop AB"] },
-        { id: 2, name: "Bus B", stops: ["Stop ABCDE", "Stop BCD", "Stop AB"] },
-        { id: 3, name: "Bus C", stops: ["Stop ABCDE", "Stop ACE", "Stop BCD"] },
-        { id: 4, name: "Bus D", stops: ["Stop ABCDE", "Stop BCD", "Stop D"] },
-        { id: 5, name: "Bus E", stops: ["Stop ABCDE", "Stop ACE", "Stop E"] }
+        { id: 1, name: "Route 80", stops: 
+            [   
+                "Langdon & Memorial Union", 
+                "Observatory & Elm",
+                "University Bay & Lot 60",
+                "Eagle Heights & Brown Shelter",
+                "Marsh & Lot 76",
+                "Randall & Engineering"
+            ] 
+        },
+        { id: 2, name: "Route 81", stops: 
+            [   
+                "Langdon & Memorial Union", 
+                "Blair & Johnson",
+                "BW Washington & Bedford"
+            ] 
+        },
+        { id: 3, name: "Route 82", stops: 
+            [   
+                "Langdon & Memorial Union", 
+                "Walnut & Observatory",
+                "Regent & Breese"
+            ] 
+        },
+        { id: 4, name: "Route 84", stops: 
+            [   
+                "Eagle Heights & Brown Shelter",
+                "Lake Mendota & Eagle Heights",
+                "Highland & UW Hospital",
+                "Observatory & Easterday",
+                "Linden & Charter",
+                "Linden & Babcock",
+            ] 
+        }
     ];
 
     const placeholderStops = [
-        { id: 1, name: "Stop ABCDE", buses: ["Bus A", "Bus B", "Bus C", "Bus D", "Bus E",] },
-        { id: 2, name: "Stop ACE", buses: ["Bus A", "Bus C", "Bus E"] },
-        { id: 3, name: "Stop AB", buses: ["Bus A", "Bus B"] },
-        { id: 4, name: "Stop BCD", buses: ["Bus B", "Bus C", "Bus D"] },
-        { id: 5, name: "Stop D", buses: ["Bus D"] },
-        { id: 6, name: "Stop E", buses: ["Bus E"] }
+        { id: 1, name: "Langdon & Memorial", buses: ["Route 80", "Route 81", "Route 82"] },
+        { id: 2, name: "Observatory & Elm", buses: ["Route 80"] },
+        { id: 3, name: "University Bay & Lot 60", buses: ["Route 80"] },
+        { id: 4, name: "Eagle Heights & Brown Shelter", buses: ["Route 80", "Route 84"] },
+        { id: 5, name: "Marsh & Lot 76", buses: ["Route 80"] },
+        { id: 6, name: "Randall & Engineering", buses: ["Route 80"] },
+        { id: 7, name: "Blair & Johnson", buses: ["Route 81"] },
+        { id: 8, name: "W Washington & Bedford", buses: ["Route 81"] },
+        { id: 9, name: "Walnut & Observatory", buses: ["Route 82"] },
+        { id: 10, name: "Regent & Breese", buses: ["Route 82"] },
+        { id: 11, name: "Lake Mendota & Eagle Heights", buses: ["Route 84"] },
+        { id: 12, name: "Highland & UW Hospital", buses: ["Route 84"] },
+        { id: 13, name: "Observatory & Easterday", buses: ["Route 84"] },
+        { id: 14, name: "Linden & Charter", buses: ["Route 84"] },
+        { id: 15, name: "Linden & Babcock", buses: ["Route 84"] }
     ];
 
     const [buses, setBuses] = useState(placeholderBuses);

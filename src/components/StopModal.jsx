@@ -4,7 +4,7 @@ export default function StopModal(props) {
     return (
         <Modal show={props.show} onHide={props.handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{props.name} Buses</Modal.Title>
+                <Modal.Title>Routes to {props.name}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>

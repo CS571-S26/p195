@@ -19,11 +19,6 @@ export default function StartPage(props) {
                     <p>Click on "Bus Stops" to view all stops visited by university buses.</p>
                     <p>Click on "Favorite Buses" to view any buses you have favorited.</p>
                     <p>Click on "Favorite Stops" to view any stops you have favorited.</p>
-                    <h3>To-Do List</h3>
-                    <ul>
-                        <li>Replace placeholder bus and stop info.</li>
-                        <li>Consider other interactive elements.</li>
-                    </ul>
                 </Col>
             </Row>
         </Container>
