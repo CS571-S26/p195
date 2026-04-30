@@ -8,6 +8,7 @@ export default function StopInfo(props) {
     const { favoritedStopIds, favoriteStop, unfavoriteStop } = useContext(BusBuddyDataContext)
     const [showInfo, setShowInfo] = useState(false)
     const [note, setNote] = useState("")
+    const [rating, setRating] = useState(0)
 
     const isFavorited = favoritedStopIds.includes(props.id)
 
@@ -15,7 +16,12 @@ export default function StopInfo(props) {
         const savedNotes = JSON.parse(localStorage.getItem("stopNotes")) || {}
         if (savedNotes[props.id]) {
             setNote(savedNotes[props.id])
+        } else {
+            setNote("")
         }
+
+        const savedRatings = JSON.parse(localStorage.getItem("stopRatings")) || {}
+        setRating(savedRatings[props.id] ?? 0)
     }, [props.id])
 
     useEffect(() => {
@@ -23,6 +29,12 @@ export default function StopInfo(props) {
         savedNotes[props.id] = note
         localStorage.setItem("stopNotes", JSON.stringify(savedNotes))
     }, [note, props.id])
+
+    useEffect(() => {
+        const savedRatings = JSON.parse(localStorage.getItem("stopRatings")) || {}
+        savedRatings[props.id] = rating
+        localStorage.setItem("stopRatings", JSON.stringify(savedRatings))
+    }, [rating, props.id])
 
     return (
         <div>
@@ -38,6 +50,10 @@ export default function StopInfo(props) {
             <Button onClick={() => setShowInfo(true)}>
                 Show Info
             </Button>
+
+            <p className="mt-2 mb-2">
+                {rating > 0 ? `Rating: ${rating} / 5` : "Not rated yet"}
+            </p>
 
             {isFavorited ? (
                 <Button onClick={() => unfavoriteStop(props.id, props.name)} variant="danger">
@@ -55,7 +71,9 @@ export default function StopInfo(props) {
                 name={props.name}
                 buses={props.buses}
                 note={note}
+                rating={rating}
                 setNote={setNote}
+                setRating={setRating}
             />
         </div>
     )

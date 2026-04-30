@@ -33,6 +33,26 @@ export default function BusModal(props) {
                     </a>
                 </p>
 
+                <Form.Group className="mt-3">
+                    <Form.Label>Rating</Form.Label>
+                    <div>
+                        {[1, 2, 3, 4, 5].map(value => (
+                            <Button
+                                key={value}
+                                variant={value <= props.rating ? "warning" : "outline-secondary"}
+                                size="sm"
+                                className="me-1"
+                                onClick={() => props.setRating(value)}
+                            >
+                                {value <= props.rating ? "★" : "☆"}
+                            </Button>
+                        ))}
+                        <span className="ms-2">
+                            {props.rating > 0 ? `${props.rating} / 5` : "Not rated yet"}
+                        </span>
+                    </div>
+                </Form.Group>
+
                 <Form.Group controlId="notesTextarea" className="mt-3">
                     <Form.Label>Notes</Form.Label>
                     <Form.Control

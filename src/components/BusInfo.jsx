@@ -8,6 +8,7 @@ export default function BusInfo(props) {
     const { favoritedBusIds, favoriteBus, unfavoriteBus } = useContext(BusBuddyDataContext)
     const [showInfo, setShowInfo] = useState(false)
     const [note, setNote] = useState("")
+    const [rating, setRating] = useState(0)
 
     const isFavorited = favoritedBusIds.includes(props.id)
 
@@ -15,7 +16,12 @@ export default function BusInfo(props) {
         const savedNotes = JSON.parse(localStorage.getItem("busNotes")) || {}
         if (savedNotes[props.id]) {
             setNote(savedNotes[props.id])
+        } else {
+            setNote("")
         }
+
+        const savedRatings = JSON.parse(localStorage.getItem("busRatings")) || {}
+        setRating(savedRatings[props.id] ?? 0)
     }, [props.id])
 
     useEffect(() => {
@@ -23,6 +29,12 @@ export default function BusInfo(props) {
         savedNotes[props.id] = note
         localStorage.setItem("busNotes", JSON.stringify(savedNotes))
     }, [note, props.id])
+
+    useEffect(() => {
+        const savedRatings = JSON.parse(localStorage.getItem("busRatings")) || {}
+        savedRatings[props.id] = rating
+        localStorage.setItem("busRatings", JSON.stringify(savedRatings))
+    }, [rating, props.id])
 
     return (
         <div>
@@ -38,6 +50,10 @@ export default function BusInfo(props) {
             <Button onClick={() => setShowInfo(true)}>
                 Show Info
             </Button>
+
+            <p className="mt-2 mb-2">
+                {rating > 0 ? `Rating: ${rating} / 5` : "Not rated yet"}
+            </p>
 
             {isFavorited ? (
                 <Button onClick={() => unfavoriteBus(props.id, props.name)} variant="danger">
@@ -55,9 +71,11 @@ export default function BusInfo(props) {
                 name={props.name}
                 stops={props.stops}
                 note={note}
-                image = {props.image}
-                link = {props.link}
+                rating={rating}
+                image={props.image}
+                link={props.link}
                 setNote={setNote}
+                setRating={setRating}
             />
         </div>
     )
